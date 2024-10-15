@@ -27,8 +27,6 @@ final class RemoteController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        dd($remote->buttons());
-
         return $this->render('index.html.twig', [
             'buttons' => $remote->buttons(),
         ]);
