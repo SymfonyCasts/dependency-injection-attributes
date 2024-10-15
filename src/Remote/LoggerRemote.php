@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Attribute\Target;
 final class LoggerRemote implements RemoteInterface
 {
     public function __construct(
-        #[Target('buttonLogger')]
+        #[Target('buttonsLogger')]
         private LoggerInterface $logger,
         private RemoteInterface $inner,
     ) {
