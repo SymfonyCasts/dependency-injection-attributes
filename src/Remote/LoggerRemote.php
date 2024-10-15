@@ -4,25 +4,27 @@ namespace App\Remote;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsDecorator;
+use Symfony\Component\DependencyInjection\Attribute\Target;
 
 #[AsDecorator(ButtonRemote::class)]
 final class LoggerRemote implements RemoteInterface
 {
     public function __construct(
-        private LoggerInterface $buttonLogger,
+        #[Target('buttonLogger')]
+        private LoggerInterface $logger,
         private RemoteInterface $inner,
     ) {
     }
 
     public function press(string $name): void
     {
-        $this->buttonLogger->info('Pressing button {name}', [
+        $this->logger->info('Pressing button {name}', [
             'name' => $name
         ]);
 
         $this->inner->press($name);
 
-        $this->buttonLogger->info('Pressed button {name}', [
+        $this->logger->info('Pressed button {name}', [
             'name' => $name
         ]);
     }
