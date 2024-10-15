@@ -4,12 +4,15 @@ namespace App\Remote;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\Attribute\AsDecorator;
+use Symfony\Component\DependencyInjection\Attribute\AutowireDecorated;
 
 #[AsDecorator(ButtonRemote::class)]
 final class LoggerRemote implements RemoteInterface
 {
     public function __construct(
         private LoggerInterface $logger,
+
+        #[AutowireDecorated]
         private RemoteInterface $inner,
     ) {
     }
