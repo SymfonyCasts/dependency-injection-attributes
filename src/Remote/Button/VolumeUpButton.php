@@ -15,9 +15,11 @@ final class VolumeUpButton implements ButtonInterface
 
     public function press(): void
     {
-        if (true) { // detect if volume is too high
+        if (false) { // detect if volume is too high
             $this->parentalControls->volumeToHigh();
         }
+
+        dump($this->parentalControls);
 
         dump('Change the volume up');
     }
