@@ -52,7 +52,7 @@ returns the result.
 Make this multiline to give us some more room. Add a second argument:
 `method: 'volumeTooHigh'`:
 
-[[[ code('fd39eb26f1') ]]]
+[[[ code('13f5cff8d4') ]]]
 
 When Symfony instantiates a service that uses `#[AutowireCallable]`, by default, it
 will instantiate its service. It's an eager beaver! To avoid this, add a third
