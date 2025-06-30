@@ -1,5 +1,5 @@
 diff --git a/src/Remote/Button/VolumeUpButton.php b/src/Remote/Button/VolumeUpButton.php
-index b5022b4..d86628e 100644
+index b5022b4..3f74bfa 100644
 --- a/src/Remote/Button/VolumeUpButton.php
 +++ b/src/Remote/Button/VolumeUpButton.php
 @@ -4,16 +4,20 @@ namespace App\Remote\Button;
@@ -20,7 +20,7 @@ index b5022b4..d86628e 100644
 -        #[AutowireServiceClosure(ParentalControls::class)]
 +        #[AutowireCallable(
 +            service: ParentalControls::class,
-+            method: 'volumeToHigh',
++            method: 'volumeTooHigh',
 +            lazy: true,
 +        )]
          private \Closure $parentalControls,
