@@ -146,7 +146,7 @@ Vuelve a la aplicación, actualízala, pulsa el
 botón "subir volumen" y salta al perfilador.
 
 00:02:44.486 --> 00:02:48.156 align:middle
-Se sigue llamando a la lógica
+Se sigue llamando al método
 ParentalControls::volumeTooHigh().
 
 00:02:48.506 --> 00:02:53.246 align:middle
