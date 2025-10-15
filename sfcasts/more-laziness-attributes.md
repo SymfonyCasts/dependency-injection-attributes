@@ -65,7 +65,7 @@ Now, `ParentalControls` will only be instantiated when the closure is invoked.
 In the docblock above, change the closure return type to `void` to match the
 return type of `volumeTooHigh()`:
 
-[[[ code('621d54f47a') ]]]
+[[[ code('7e883a3efe') ]]]
 
 Down in `press()`, remove the `->volumeTooHigh()` call:
 
