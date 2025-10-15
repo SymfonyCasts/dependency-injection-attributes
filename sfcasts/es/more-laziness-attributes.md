@@ -26,7 +26,7 @@ Quita el `dump()`, gira hasta nuestra aplicación, actualiza y pulsa el botón "
 
 Veamos otra forma de hacer lo mismo. En `VolumeUpButton`, sustituye `#[AutowireServiceClosure]` por `#[AutowireCallable]`. Mantén`ParentalControls::class` como primer argumento, pero anteponle `service`:
 
-[[[ code('86344711fe') ]]]
+[[[ code('3eeb609b64') ]]]
 
 `#[AutowireCallable]` también inyecta un cierre. Pero en lugar de devolver el objeto de servicio completo, instanciará el servicio, llamará a un único método y devolverá el resultado.
 
@@ -36,7 +36,7 @@ Hazlo multilínea para tener más espacio. Añade un segundo argumento:`method: 
 
 Cuando Symfony instancie un servicio que utilice `#[AutowireCallable]`, por defecto, instanciará su servicio. ¡Es un castor ansioso! Para evitarlo, añade un tercer argumento: `lazy: true`:
 
-[[[ code('32f8bbbb71') ]]]
+[[[ code('35508ba232') ]]]
 
 Ahora, `ParentalControls` sólo se instanciará cuando se invoque el cierre.
 
@@ -46,11 +46,11 @@ En el docblock anterior, cambia el tipo de retorno del cierre a `void` para que 
 
 Abajo, en `press()`, elimina la llamada a `->volumeTooHigh()`:
 
-[[[ code('75fc23734b') ]]]
+[[[ code('715db3022f') ]]]
 
 Ahora el cierre lo llama cuando se invoca.
 
-Vuelve a la aplicación, actualízala, pulsa el botón "subir volumen" y salta al perfilador. Se sigue llamando al método `ParentalControls::volumeTooHigh()`. ¡Perfecto!
+Vuelve a la aplicación, actualízala, pulsa el botón "subir volumen" y salta al perfilador. La lógica `ParentalControls::volumeTooHigh()` sigue siendo llamada. ¡Perfecto!
 
 `#[AutowireCallable]` es ciertamente genial, pero para la mayoría de los casos, prefiero utilizar`#[AutowireServiceClosure]` porque:
 * Es perezoso por defecto.
