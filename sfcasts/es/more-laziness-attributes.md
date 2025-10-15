@@ -42,7 +42,7 @@ Ahora, `ParentalControls` sólo se instanciará cuando se invoque el cierre.
 
 En el docblock anterior, cambia el tipo de retorno del cierre a `void` para que coincida con el tipo de retorno de `volumeTooHigh()`:
 
-[[[ code('621d54f47a') ]]]
+[[[ code('7e883a3efe') ]]]
 
 Abajo, en `press()`, elimina la llamada a `->volumeTooHigh()`:
 
