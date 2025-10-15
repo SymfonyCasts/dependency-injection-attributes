@@ -43,7 +43,7 @@ Let's look at another way to do the same thing. In `VolumeUpButton`,
 replace `#[AutowireServiceClosure]` with `#[AutowireCallable]`. Keep
 `ParentalControls::class` as the first argument but prefix it with `service`:
 
-[[[ code('86344711fe') ]]]
+[[[ code('3eeb609b64') ]]]
 
 `#[AutowireCallable]` *also* injects a closure. But instead of returning the full
 service object, it instantiates the service, calls a single method on it, then
@@ -58,7 +58,7 @@ When Symfony instantiates a service that uses `#[AutowireCallable]`, by default,
 will instantiate its service. It's an eager beaver! To avoid this, add a third
 argument: `lazy: true`:
 
-[[[ code('32f8bbbb71') ]]]
+[[[ code('35508ba232') ]]]
 
 Now, `ParentalControls` will only be instantiated when the closure is invoked.
 
@@ -69,7 +69,7 @@ return type of `volumeTooHigh()`:
 
 Down in `press()`, remove the `->volumeTooHigh()` call:
 
-[[[ code('75fc23734b') ]]]
+[[[ code('715db3022f') ]]]
 
 This is now called by the closure when invoked.
 
